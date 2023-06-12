@@ -1,4 +1,4 @@
-describe('Homepage functionality', () => {
+describe('Submit functionality', () => {
   beforeEach(() => {
     cy.fixture('./urls').then((data) => {
       cy.intercept('GET', 'http://localhost:3001/api/v1/urls', {
@@ -26,7 +26,7 @@ describe('Homepage functionality', () => {
         body: data
       });
     })
-    
+
     cy.get('.shorten-button').click()
       .visit('http://localhost:3000/')
       .get('.url').eq(3)
